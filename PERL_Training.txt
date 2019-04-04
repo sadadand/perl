@@ -1,0 +1,1584 @@
+
+Date 13/1/2013 - PERL Scripting:
+
+
+Practical extraction reporting language developped by larry wall 1987
+a) text processing and report generation
+
+Features: 1) Open source
+Install perl, no need of license and platform independant
+
+2) install PERL on LINUX, SOLARIS, WINDOWS, AIX, Platform independant programming language
+
+3) OOPS: Object oriented programming
+
+4) Support database connectivity: mysql, oracle database, postgress SQL
+   Java, by defaut with the modules/libraries it connects to database
+5) Interpreted Language ( Write a code and save, then execute)
+
+
+Applications:
+ > Automation (Admin tasks) Quite common 
+ > Network programming
+ > Web development - CGI (common gateway interface) : User credentials authentication match part (quite common)
+ > Product development 
+
+Compiled C, Java
+
+interpreted perl, unix shell, python
+
+Windows Version - Strabery perl (www.strabery.com)
+        Active perl 
+ 
+
+sha-bang #!
+
+In LINUX)
+
+#!/usr/bin/perl  (save) : cmd:type perl 
+print "hello\tworld\n";
+print 'hello world';
+
+\n New line
+\t tab
+chmod 777 test.pl
+
+
+
+Data Types        used
+a) scalar     $   single value 
+b) array      @   multiple value
+c) hashes     %   multiple value
+
+
+#!/usr/bin/perl
+
+$num = 300 ;
+print $num ;
+$abc = "hello world" ;
+print "$abc \n";
+$flt = 30.0 ;
+print "Value in fit is $flt \n";
+$num = 'c';
+print "value is $num \n";
+$abc
+
+
+" One number and only one integer 
+
+$a = <stdin> ; (standard input ) to read some value from input
+
+print " value stored in a is $a \n";
+
+
+Day - 1
+
+!/usr/bin/perl - execution directory
+No restrcition for space either or not
+
+Scalar: Storing single floating character, (single string) 
+
+!/usr/bin/perl
+$str = "hello world";
+print "$str\n";
+$val = 100 ;
+print "Value is $val \n" ; (we use double quote if u use string)
+$abc = 4.9 ;
+print "value is $abc \n"; (Integer value -100, floating value 4.9, no restriction
+
+
+
+!/usr/bin/perl 
+print "Enter some value\n";
+$val = <stdin> ; (scanner is used to read statement from key borard
+print "Value :: $val";
+
+<> or <STDIN> or <stdin> are same
+
+
+!/usr/bin/perl
+$a = 10 ;
+$b = 3 ;
+$sum = $a + $b ;
+print "Sum is $sum \n";
+$Diff = $a - $b ;
+print "difference is $diff \n";
+$mul = $a * $b ;
+print "mul is $mul \n";
+$div = $a / $b ;
+print "div is $diff \n";
+$div = $a % $b
+
+Reading the value from the keyboard using stdin 
+
+Post increment
+!/usr/bin/perl
+
+$i = 0 ;
+$a = $i++ ; (
+print " value of i 
+
+
+Pre increment 
+!/usr/bin/perl
+
+$j = 0 ;
+$b = ++$j ;
+print 
+
+
+
+Decrement
+!/usr/bin/perl 
+
+$a = 10 ;
+
+$b = $a-- ;
+print 
+
+
+!/usr/bin/perl
+$a = 100 ;
+print "hello world" $a \n"; (single quote wont evaluate)
+Print                         (double quote will evaluate)
+
+!/usr/bin/perl
+
+$str = qq/hello world\n/ ; (similar to double quote)
+print $str ;                (#- will not evaluate)
+
+
+!/usr/bin/perl
+
+$a = 100 ;
+$str =                    (q - will treat as single quote)
+
+
+
+Linux commands
+
+!/usr/bin/perl
+$res = `pwd` ; ( Back quote to execute commands)
+print "value of res is $res \n";
+
+
+!/usr/bin/perl
+
+$val = qx/pwd/ ;    (` = qx)
+print $val ;
+
+
+
+
+!/usr/bin/perl
+
+$var = system ("ls");     (Use system to execute for OS command for 0 or non 0)
+print "Value is $var \n"; (` back quote for same without system value)
+
+
+!/usr/bin/perl
+
+$a = 10 ;                   (is no value for $b, then it considered as 0)
+$sum = $a + $b ;
+print "sum is $sum \n";
+
+
+
+!/usr/bin/perl
+
+$str1="hello" ;
+$str2="  
+
+concadenation of strings 
+
+
+DAY 2
+
+Numeric Comparison Operators
+
+Example 1
+#!/usr/bin/perl   (If u dont add this dir, then it uses the shell script)
+
+$a = 10 ;         (If left hand side is lower -1, if equal then 0, if first is big, then 1 
+$b = 20 ;
+
+$c = $a<=>$b ;
+print "Value is $c \n";
+
+
+
+#!/usr/bin/perl
+print "Enter first value\n";
+$a = <stdin>;
+print "Enter second value\n";
+$b = <stdin>;
+
+if ( $a == $b )
+{
+	print "Values are equal";
+}
+
+
+
+
+
+#!/usr/bin/perl
+print "Enter first value\n";
+$a = <stdin>;
+print "Enter second value\n";
+$b = <stdin>;
+
+if ( $a != $b )
+{
+	print "Values are not equal";
+}
+
+
+#!/usr/bin/perl
+print "Enter first value\n";
+$a = <stdin>;
+print "Enter second value\n";
+$b = <stdin>;
+
+if ( $a < $b )
+{
+	print "hello world\n";
+}
+
+
+
+Numeric Logical operators
+
+#!/usr/bin/perl
+
+print "Enter first value\n";
+$num1 = <stdin>;
+print "Enter second value\n";
+$num2 = <stdin>;
+
+if ( $num1 > 10 && $num2 < 10 )
+{ 
+	print "Hello World\n";
+}
+
+
+
+Assignment Operators
+
+
+#!/usr/bin/perl
+
+$a = 10 ;
+$b = 2 ;
+
+$a += $b ; # $a = $a + $b    (try with -= and *= and /= )
+print "Value of a is $a\n";
+print "Value of a is $b\n";
+
+
+Conditional Operator
+
+#!/usr/bin/perl
+
+$a = 2 ;                            (checkout with stdin instead of values)
+$b = 3 ;
+$res = ($a < $b)?"hello:"world";
+print "value of res is $res \n";
+
+
+
+#!/usr/bin/perl
+
+print "enter first value\n";
+$num1 = <stdin>;
+print "enter second value\n";
+$num2 = <stdin>'
+
+$a = 100 ;
+$b = 200 ;
+$res = ($num1 == $num2)?$a:$b;
+print "value of res is $res \n";
+
+
+#!/usr/bin/perl
+
+$str1 = "hello";
+$str2 = "world";
+$str3 = $str1 . $str2 ;   (. dot is used for concatenating 2 things)
+print "Concatenated string is $str3\n";
+
+
+#!/usr/bin/perl
+$str1 = "hello";
+$new = $str1 x 2 ;
+print "New string is 
+
+
+
+#!/usr/bin/perl
+$string1 = "hello"
+$string2 = "world"
+
+if ( $string1 eq $string2 ) 
+{
+	print "values are equal..\n";
+}
+
+
+
+#!/usr/bin/perl
+print "enter first number\n";
+$a = <stdin>;
+print "enter second number\n";
+$b = <stdin>;
+
+$res = $a cmp $b ;
+print "value of res is $res \n";
+
+
+
+
+
+Day 3
+
+#!/usr/bin/perl              
+$str = "hello world\n";
+chomp ($str);            CHOMP - to remove the last new line character from string (if no new line character, it wud not affect anything)
+print $str;
+
+
+
+#!/usr/bin/perl
+print "Enter some value\n";   \n= enter key
+$val = <stdin>                $val contains whtever we type and new line
+chomp ($val)
+print $val
+
+
+#!/usr/bin/perl
+$str = "hello world";
+print "original $str \n";
+chop ($str);                CHOP - will remove any character letter before the \n" character 
+print "changed string is $str \n";
+chop ($str);
+print "changed string2 is $str \n";
+
+
+#!/usr/bin/perl                      
+
+print"Enter one string\n";          length functions as number of elements/characters in a string
+$str = <stdin>;
+chomp($str)
+print "Entered string is $str ";
+$len = length($str);
+print "Length of string is $len \n";
+
+
+
+#!/usr/bin/perl
+
+print "Enter some string\n";
+
+$abc = <stdin>;
+$new = uc ($abc);                UC- Uppser case 
+print "new string is $new";
+print "old string is $abc";
+
+
+
+#!/usr/bin/perl
+print "Enter a string\n";
+$str = <stdin>;
+$newstr = ucfirst($str);
+print "original string is $str";
+print "changed string is $newstr";
+
+
+#!/usr/bin/perl
+print "Enter a string in capital letter \n";
+$str = <stdin>;
+$new = lc($str);
+print "original string is $str";
+print "changed string is $new";
+
+
+#!/usr/bin/perl
+print "Enter a string\n";
+$str = <stdin>;
+$new = lcfirst($str);
+print "original string is $str";
+print "changed string is $new";
+
+
+
+ARRAY 
+
+#!/usr/bin/perl
+
+@fruits = ("apple","mango","orange",pineapple");  array of string
+print "@fruits\n";
+print "$fruits[0] \n";
+print "$fruits[1] \n";        every array has intex, it is counted as 0,1,2 
+print "$fruits[2] \n";
+print "$fruits[-1] \n";        -1 is the right most element,
+      
++
+$FRUITS[4]="STRABERRY";
+PRINT @FRUITS\n";
+$fruits[0]="banana";
+PRINT @FRUITS\n";
+
+
+#!/usr/bin/perl
+@num = (1,2,3,4,5);       array of integers
+print "@num\n";
+$a = @num ;
+print"Number of elements $a \n";
+
+
+#!/usr/bin/perl
+@mixed = ("shell",1,7,9,c);
+print "@mixed\n";
+$num = @mixed ;
+print "$num \n";
+
+
+#!/usr/bin/perl
+@num=("one","two","three");
+($a,$b,$c) = @num ;
+print "value of a is $a \nvalue of b is $b\nvalue of c is $c";
+
+                
+
+
+DAY 4
+
+INDEX - 
+      
+#!/usr/bin/perl
+@VEG = ("carrot","beans","cucumber");
+$" ="-";                     (- or : or variables is used between the elements)
+print "@veg";                ( without double quote, prints without space)
+print "\n";        
+print "@veg"                (if double quote, by default prints with seperator)
+print "\n"; 
+
+$, - without double quote 
+$" -  prints defaults         (if no value it uses space to seperate)
+
+
+
+
+#!/usr/bin/perl
+@colours = qw/red green blue/ ;   (use qw to write an array)
+print"@colours\n";
+
+
+
+#!/usr/bin/perl
+@array = qw/11 99 49 6 34 181/;
+#@sorted = sort @array ;             (sorting is by default a string based ascending /alphabtic based  
+@sorted = sort {$a <=> $b} @array ;  (b and a reverse)
+print "original array is @array \n";
+print "sorted array is @sorted \n";
+
+
+
+#!/usr/bin/perl
+@fruits = qw/mango apple orange/;
+print "original array is @fruits\n";
+@sorted = sort @fruits ; or sort 
+print "sorted arrat is @sorted\n";
+
+
+
+#!/usr/bin/perl
+
+@array = qw/10 20 30 40 50/;
+@reverse = reverse @array ;
+print "Original array is @array\n";
+print "reversed array is @reverse\n"; (reverse is used for reversing an array)
+
+
+
+#!/usr/bin/perl
+@stack=qw/prange banana/;
+print "original array is @stack \n";
+push @stack ,"pineapple",apple" ;     (to push the element to the right hand side)
+print "changed array is @stack \n";
+unshift @stack, "mango" ;            (to push the element to the left hand side)
+print "changed array is @stack \n";
+
+
+
+#!/usr/bin/perl
+@num = qw/4 56 6/;
+print "original @num\n";
+unshift @num , 3 ;
+print "changed array is @num\n";
+
+
+
+#!/usr/bin/perl
+@num = qw/one two three /;
+print "original array is @num\n";
+$element =pop(@num) ;             pop it takes last element of the array from right hand side
+print "changed array is @num\n";
+print "poped element is $element \n";
+
+
+
+#!/usr/bin/perl
+
+@abc = qw/ test shell perl python/;
+print "original array is @abc\n";
+$a = shift @abc ; ( shift takes one element from the left hand side)
+print "changed array is @abc \n";
+print "shifted element is $a \n";
+
+
+
+#!/usr/bin/perl
+
+@num = qw/one twlo three four/;
+
+foreach $var (@num) 
+{
+	print " $var\n";
+}                           foreach takes each element, number of iteration = number of elements in the array :  looping based on array elements)
+
+
+
+
+
+#!/usr/bin/perl
+
+@numbers = qw/2 43 7 76 8/;
+foreach $a (@numbers)
+{
+	print " $a" ;
+}
+
+
+
+#!/usr/bin/perl
+@fruits = qw/apple mango orange pineapple/;
+print "original array is @fruits \n";
+foreach (@fruits)
+{
+	print "hello or $_\n";                    ($_ is a default scalar variable, no scalar, it takes element and assigns to the default scalar variable )
+}
+
+
+
+DAY 5
+
+foreach is loop statement to perform THE task 
+
+hash - STORES MULTIPLE VALUE 
+HASH - DONT HAVE INTEX, IT STORES KEY VALUE
+
+
+#!/usr/bin/perl
+%HASH1 = ("MANGO"=>100 , "APPLE"=>150 , "ORANGE"=>400);
+PRINT %hash1 ;
+
+PRINT "\n$hash1{mango} \n";
+PRINT "\n$hash1{apple} \n";
+PRINT "\n$hash1{apple} \n";
+
+$hash{pineapple}=250;
+$hash{apple}=500;
+print %hash1 ;
+
+
+
+#!/usr/bin/perl
+% abc = ("orange"=>200 mango"=>100 apple=>500
+%abc = ("Orange",200,"Mango",100,"Apple",500);
+%abc = qw/orange 200 mango 100 apple 500/;
+print %abc ;
+print "Value is $abc{orange}\n";
+
+
+
+#!/usr/bin/perl
+%course = qw/shell 30000 perl 30000 python 5000/;  hash follows the key value itern, 
+print %course ;                 keys wil take all keys from array and store in an array
+@abc = keys $course ;           values will take all values from array and store in array 
+print "keys are @abc\n";
+@cde = values %course;
+print @cde\n";
+
+
+
+
+#!/usr/bin/perl
+
+%veg = qw/beans 100 banana 30 onion 20/;
+($a,$b) = each %veg ;                          each will be used to take any pair of elements
+print "value of a is $a , value of b is $b\n";
+($c,$d) = each %veg ; 
+print "value of a is $a , value of b is $b\n";      it wont reconsider the pair again, it wont take same pair which is used earlier 
+
+
+
+#!/usr/bin/perl
+%veg = qw/beans 100 banana 200 onion 20/;
+while ( ($a,$b = each %veg))               while is loop which keeps on execute, if false, it will return with an error
+{
+	print "a = $a\tb = $b\n";
+}
+
+
+
+#!/usr/bin/perl
+%veg = qw/beans 100 banana 200 onion 20/;    delete function
+print %veg ;
+print "\n";
+delete $veg{banana} ;
+print %veg ;
+print "\n";
+
+
+
+#!/usr/bin/perl
+%veg = qw/beans 100 banana 200 onion 20/;    (hash means key and value)
+_______________           try delete $veg{banana} ;
+if ( exists $veg{banana}
+{
+	print "value exists \n";
+}
+else
+{
+	print "Value doesnt exist\n";
+}
+
+
+
+
+#!/usr/bin/perl
+
+@veg array = qw/beans 100 banana 200 onion 20/;
+%veg_hash = @veg_array ;   (u can ssign hash to array, array to hash)
+print %veg_hash ;
+print "\n";
+print "veg_hash{beans}\n";
+$veg_hash{carrot}=40;
+print %veg_hash ;
+
+
+
+
+ls -l (command line options are values when we execute some scripts/cmds)
+
+
+command line scripts
+
+#!/usr/bin/perl
+
+print "command is passed is @ARGV \n";  ARGV - is used to store the ELEMENTS/VALUES we pass along with scripts, 
+                                        ARGV - ARGUMENT VECTOR 
+type scripts with value 
+
+
+
+
+#!/usr/bin/perl                      
+$num = @ARGV ;
+print "Number OF VALUES PASSED $NUM \N";
+$sum = $ARGV[0] + $ARGV[1] ;
+print "sum is $sum \n";
+
+
+
+DAY 6
+
+CONDITIONAL Statements and LOOPS
+
+#!/usr/bin/perl 
+
+
+1.	if
+	if (condition)
+	{
+
+	}
+
+
+2.	if ( condition )
+	{
+
+	}
+	else
+	{
+	
+	}
+
+3.	if (condition1)
+	{
+	statements
+	}
+	elsif (condition2)
+	{
+
+        }
+	elsif (condition2)
+	{
+
+	}
+	else
+	{
+	
+	}
+
+
+
+numeric  string
+ ==	 eq     compare value 
+ !=	 ne
+ <       	lt
+ >       	gt
+ <=	 le
+ >=      	gt
+ <=>    	cmp
+
+
+	unless (condition) unless is negative of if, when if false, it executes, if true, it wont execute
+	{
+
+	}
+
+
+
+
+#!/usr/bin/perl          change value, it wont print anything
+$a = 10 ;                try <stdin> for both  a and b
+$b = 10 ;
+if ( $a == $b ) 
+{	
+	print "values are equal\n";
+}
+
+
+
+#!/usr/bin/perl  
+print " Enter some value\n";        
+$a = <stdin> ;
+print " Enter some value\n";                  
+$b = <stdin> ;
+{	
+	print "values are equal\n";
+}
+
+
+#!/usr/bin/perl 
+
+print " Enter some value\n";  
+$num1 = <stdin>;
+print " Enter some value\n";
+$num1 = <stdin>;
+chomp($num1);
+chomp($num2);
+
+
+#!/usr/bin/perl 
+print "Enter first integer\n";
+$a = <stdin>;
+print "enter second integer\n";
+$b = <stdin>;
+chomp($a);
+chomp($b);
+
+if($a ==$b)
+{
+	print "values are equal\n";
+}
+elsif  ($a < $b)
+{
+	print "$a is less than $b\n";
+}
+else 
+{
+	print "$a is greater than $b\n";
+}
+
+
+conditional statements strings
+
+#!/usr/bin/perl 
+print "enter a string \n";
+$str = <stdin>;
+
+chomp($str);
+if ($str eq "hello\n")
+{
+	print "entered value is hello\n";
+}
+else
+{
+	print "entered some other value\n";
+}
+
+
+
+#!/usr/bin/perl 
+print "enter one number\n";
+$a = <stdin>;
+chomp($a);
+unless ( $a == 5 )
+{	
+	print "hello world\n";
+}
+else
+{
+	print "shell perl \n";
+}
+
+
+
+#!/usr/bin/perl 
+$i = 0 ;
+
+while ($i < 10)        while loop keep executes if condition is true, if condition is false, it wont execute
+{	
+	print "value is $i\n";
+	$i++;  or $i = $i +1     increase value of i by 1
+}
+
+
+
+#!/usr/bin/perl 
+while($i<5)
+
+$i = 5;
+do                   do is to execute once and then check the condition of while
+
+{
+	print "hello world\n";
+}while($i<5);
+
+
+
+#!/usr/bin/perl 
+
+$a = 0;
+until ( $a == 5 )                   it keep on executes as long as it is true, when it become tru, it wil not execute
+{                                when condition become tru, it comes out of the loop
+	print "value is $a\n";
+	$a++;
+}
+
+
+
+#!/usr/bin/perl 
+
+$a = 0;
+do{
+	print "hello world\n";
+}until ($a=5);;
+
+
+
+
+#!/usr/bin/perl 
+
+for($i=0;$i<10;$i++)               first initialization, 2nd condition check, increase value by 1, again check condition, increase value by 1, when value become 10, it wil b false. it stops
+{
+	print "value is $i\n";
+}
+
+
+
+DAY7 References: is an address, we need some memory location, each memory 
+location has address of an array and scalar has a variable
+
+#!/usr/bin/perl
+
+$abc = 300 ;
+print "value is $abc \n" ;
+$addr1 = \$abc ;            variable store an address 
+print "$addr1\n";
+print "$$addr1 \n";         $$addr1 - it means $ gives the value stored in the address
+
+
+
+#!/usr/bin/perl
+@array = qw/apple mango orange/;
+print "array is @array\n";
+$addr = \@array ;                \ - gives address of an array or scalar or hash
+print "address is $addr\n";
+print "@$addr \n";                @ - gives the complete array 
+print "$$addr[0]\n";              $ and name of array used to access particular element
+print "$addr->{0}\n";             0 means 1st element, 1 means 2nd element ....
+
+                   
+
+#!/usr/bin/perl
+
+%hash = qw/apple 100 mango 50 orNGE 30/;
+print "$hash{apple}\n";
+print %hash , "\n";
+$addr = \%hash ;              
+print "$addr\n";
+
+
+print %$addr , "\n";         % to get complete hash 
+print "$$addr{apple}\n";
+print "$addr->{apple}\n";
+
+
+
+file operation depend on read, write or append, first open a file
+a) open the file
+b) operations - read, write, append
+c) close
+
+#!/usr/bin/perl
+
+
+open FILE , ">test.txt" ;    open is command, FILE - descriptor and > is for write mode, >> for append
+print FILE "hello world";    BY DEFAULT it prints on std o/p file, try with STDOUT
+close FILE ;
+
+
+
+#!/usr/bin/perl
+
+open FILE , "<passwd" ;    CONTENTS OF THE passwd has read into the array and 
+@array = <FILE> ; 
+PRINT "@ARRAY";
+close FILE
+
+
+
+
+Day 8
+
+Refresh of FILE 
+
+#!/usr/bin/perl
+OPEN file,">/tmp/abc.txt" or die "error cannot create file" (while running file write, run time, if file to create a file, then die executes 
+@array = qw/red blue green white/;                           IF FILE EXISTS, IT OVERWRITES
+print FILE "@array\n";             If u use file it writes on file or the STDOUT for standard o/p 
+close FILE;
+
+
+Subroutines or procedures - a block of statements (multiple or single statements) that we use again and again 
+                            
+#!/usr/bin/perl
+
+sub abc
+{
+	print "hello world\n";
+}
+
+abc ;
+abc :
+
+
+
+
+#!/usr/bin/perl             
+sub test 
+{
+	print "hello\n";
+	print "world\n";
+}
+
+test ;                       1st method  
+&test ;                      2nd method  function is called using & also
+
+
+
+
+
+#!/usr/bin/perl 
+sub testfun
+{
+	print "values are ; @_ \n";
+	($a, $b, $c) = @_ ;
+	print "a = $a\tb = $b\t c =$c\n";
+}
+
+testfun (2,5,6) ;                    these values are stored in the @_ array - is a default array
+
+
+
+
+#!/usr/bin/perl
+sub add
+{
+	$sum = $_[0] + $_[1] ;                
+	print "sum is $sum \n";
+
+} 
+
+add ( 4,6 );                     values passing are stored in @_ array
+
+
+
+
+#!/usr/bin/perl
+sub add
+{
+	$a = shift(@_);
+	print "a is $a\n";
+	$b = shift(@_);
+	print "b is $b\n";
+}
+
+
+
+#!/usr/bin/perl
+
+sub abc
+{
+	$a = shift ;
+	$b = shift ;
+	print "a = $a b = $b\n";
+}
+
+abc (5,7);
+
+
+
+#!/usr/bin/perl
+
+sub abc
+{	
+	while($a=shift)            shift array loop becomes empty 
+	{
+		print "value is $a \n";
+	}
+}
+
+
+abc (3,4,5,6,7,8,9);
+
+
+
+
+#!/usr/bin/perl
+
+sub sum
+{
+	$sum = $_[0] + $_[1];
+	return $sum ;
+}
+
+$abc = sum (4,6);
+print "sub is $abc \n";
+
+
+
+
+
+#!/usr/bin/perl               passing 2 arrays (both values are merge and made a new value for @_
+
+sub abc
+{	
+	print "@_ \n";
+        	$addr1 = $_[0];
+	$addr1 = $_[1];
+	print "first array is @$addr1\n";
+	print "first array is @$addr2\n";
+
+}
+
+@a = qw/ ab cd ef gh/;
+@b = qw/ cc ww qq ww/;
+abc(\@a,\@b);                 to pass the address inside the array instead of passing @array, check using hash%
+
+	
+			
+
+Day 9  passing values to function and returns
+function will pass thro @_ i.e. any either numerical/alphabetical
+
+
+
+#!/usr/bin/perl
+
+sub testfun
+{
+	print "@_ \n";
+}
+
+@a=qw/1 2 4/;
+@b=qw/2 3 5/;
+testfun(@a,@b);
+
+
+
+If the number of elements are more & not able to extract the values, then use \address
+
+#!/usr/bin/perl
+
+sub testfun
+{
+	print "@_ \n";
+	$addr1=shift; or (@_);
+        $addr2=shift; or (@_);
+	print "first array is @addr1\n";
+	print "second array is @addr2\n";
+}
+
+@a=qw/1 2 4/;
+@b=qw/2 3 5/;
+testfun(\@a,\@b);
+
+
+
+#!/usr/bin/perl
+
+sub testfun
+{
+	print "value passed is @_ \n";
+}
+
+%hash1 = qw/apple 100 mango 50/;
+%hash2 = qw/beans 20 orange 30/;
+testfun(%hash1,%hash2);
+
+
+
+#!/usr/bin/perl
+
+sub testfun
+{
+	print "value passed is @_ \n";
+	$addr1 = shift ;
+	$addr2 = shift ;
+	print %addr1 ;
+	print "\n";
+	print %addr2 ;
+}
+
+%hash1 = qw/apple 100 mango 50/;
+%hash2 = qw/beans 20 orange 30/;
+testfun(\%hash1,\%hash2);
+
+
+
+Function of protoyping (restriction of arguments)
+
+#!/usr/bin/perl
+
+sub testproto($$)                  $$ - it accepts two scalars
+{	                           $$;$ - two arguments is must and 3rd is optional, total 3 only 
+	print "hello world\n";    
+	print "@_\n";
+}
+
+testproto (2,4);
+
+
+
+#!/usr/bin/perl
+
+sub proto_test($@)                  
+{
+	print "hello world\n";
+}
+
+$a = 40 ;
+$b = 30 ;
+@b = qw/apple mango/;
+proto_test ($a,@b,@b); or  proto_test ($a,@b,@b);- test prototyping, &proto_test ($a,@b,@b); it will not test prototyping ($$)
+
+
+
+Pattern Matching
+
+ls*: means all files
+s* : regular expression with s character 
+=~ : equal and Tilde
+
+
+1) Matching      m/regex/modifier
+2) Substitution  s/regex/replacement/modifier
+3) Translation   tr/charcterset/replacement/modifier
+
+
+
+#!/usr/bin/perl
+
+$string = "hello my name is sspatil";
+$string = <string>;
+
+$res = ($string =~ m/sspatil/) ;
+print "value is $res\n";
+
+if ($string =~ m/sspatil/) ;
+{
+	print "matching\n";
+}
+else
+{
+	print "not matching\n";
+}
+
+
+
+#!/usr/bin/perl
+print "Enter some value\n";
+$string = <stdin>;
+
+if($string =~ m/^perl/)  or   perl$/           ^ caret means the perl word is in the begining of the line 
+{                                              $, if u use $, then line end up with perl, otherwise it prints else message
+	print "input contains perl\n";         /^perl$/ matches only when the line is with single value perl
+}
+else
+{
+	print "input doesnt contains perl\n";
+}
+
+
+
+#!/usr/bin/perl
+
+$str = "hello i have 2 tigers";
+print "original string is $srt \n";
+$str =~ s/tigers/ind/g ;                if value tigers is matching then it substitute with the next value 
+print "new string is $str \n";          /g globally it changes and substitutes the new value 
+                                       s/ for substitution 
+
+
+#!/usr/bin/perl
+
+$string = "abc abc";
+print "original string is $string\n";
+$string =~ tr/a/m/;                    traslation is similar to substitution, like m is replaced by M, in translation we use letters 
+print "new string is $string\n";
+
+
+
+
+Day 10
+
+Regular expression (regex), is a set of characters that defines certain pattern
+
+
+1) Matching      m/regex/modifier
+2) Substitution  s/regex/replacement/modifier
+3) Translation   tr/charcterset/replacement/modifier
+
+echo "hello" | tr [a-z] 
+
+
+#!/usr/bin/perl
+
+print "enter the string\n";      
+$string = <stdin>;
+$val = ($string =~ m/hello/);   if matching and hello is thr, then it returns with 1
+print "value is $val \n";
+
+
+if ( $string =~ m/^hello/ )    or m/^hello/  or m/hello$/
+{
+	print "input contains hello ...\n";
+}
+else
+{ 
+	print "input doesnt contains hello...\n";
+}
+
+
+
+pre matching and post matching
+
+#!/usr/bin/perl
+print "enter a string...\n";
+$string = <string>;
+
+$string =~ m/good/ ;
+print "prematched string is $`\n";  ` backtick/single quote - prematched    
+print "matched string is $& \n";     & and complexity letter - matched 
+print "postmatched string is $'\n";  ' Apostrophe - postmatched
+
+
+#!/usr/bin/perl
+
+$string = "hello my name is sspatil";
+print "original string is $string \n";
+$string =~ s/sspatil/patil/ ;
+print "changed string is $string \n";
+
+
+
+#!/usr/bin/perl
+
+$string = "my 6 shells jumps 8 perl";
+print "string is $string \n"
+$string =~ s/(\d)/10/ ;                   \d is digit - matches with any numerical digit, 
+print "string is $string \n";
+
+
+
+#!/usr/bin/perl
+
+print "enter a string..\n";
+$string = <stdin>;
+if($string =~ m/(\d)+/)                    + matches one or more characters  
+{
+	print "contains a integer ....\n";
+}
+print "pre = $` \nMatch = $&\npost match = $'\n";
+
+
+
+#!/usr/bin/perl
+
+print "enter a string..\n";
+$string = <stdin>;
+if($string =~ m/\w/)                           \w - matches any character, digit or alphabatical   
+{
+	print "contains a integer ....\n";      \w+ matches one more or more characters
+}
+print "pre = $` \nMatch = $&\npost match = $'\n"; \s - for white space or space (gap)
+
+
+
+alternate pattern matching
+
+#!/usr/bin/perl
+print "enter a string..\n";
+$string = <stdin>;
+
+if ( $string =~ m/blue | green/)
+{
+	print "blue or green \n";
+}
+
+
+
+Day 11
+
+
+#!/usr/bin/perl
+
+print "Enter a string\n";
+$string = <stdin>
+
+if($string =~ m/a.c/)               . represents any character except new line, it shud b some character or space between a & c, then it matches, else not
+{
+	print "matching ..\n";
+}
+else
+{
+	print "not matching..\n";
+}
+
+
+#!/usr/bin/perl
+print "Enter a string..\n";
+$string = <stdin>;
+
+if ( $string =~ m/ba*z/)  and try m/ba+z     * represents 0 or more occurance of previous character aaaa, then it matches, otherwise     
+{                                            + represents one or more previous character
+	print "matching ..\n";      
+}
+else
+{
+	print "not matching \n";
+}
+
+
+
+#!/usr/bin/perl
+print "Enter a string..\n";
+$string = <stdin>;
+
+if ( $string =~ m/ba+z/)                 * represents 0 or more occurance of previous character aaaa, then it matches, otherwise     
+{                                            + represents one or more previous character
+	print "matching ..\n";      
+}
+else
+{
+	print "not matching \n";
+}
+
+
+#!/usr/bin/perl
+print "Enter a string..\n";
+$string = <stdin>;
+
+if ( $string =~ m/ba?z/)                    ? represents 0 or 1 occurance of previous character aaaa, then it matches, otherwise     
+{                                            + represents one or more previous character
+	print "matching ..\n";      
+}
+else
+{
+	print "not matching \n";
+}
+
+
+#!/usr/bin/perl
+print "Enter a string..\n";
+$string = <stdin>;
+
+if ( $string =~ m/ba{2,4}z/)         {2,4} represents exactly 2 occurance of previous character aaaa, then it matches, otherwise     
+{                                    minimum 2 character and maximum 4 occurance of previous character
+	print "matching ..\n";      
+}
+else
+{
+	print "not matching \n";
+}
+
+
+
+#!/usr/bin/perl
+print "Enter a string..\n";
+$string = <stdin>;
+
+if ( $string =~ m/{aeiou}/)      {aeiou}     matching only when same letter in the square bracket     
+{                                                 
+	print "matching ..\n";      
+}
+else
+{
+	print "not matching \n";
+}
+
+
+
+#!/usr/bin/perl
+print "Enter a string..\n";
+$string = <stdin>;
+
+if ( $string =~ m/{a-zA-Z0-9}/)      {a-z A-Z}  matching only when same letter in the square bracket     
+{                                                 
+	print "matching ..\n";      
+}
+else
+{
+	print "not matching \n";
+}
+
+
+
+#!/usr/bin/perl
+print "Enter a string..\n";
+$string = <stdin>;
+
+if ( $string =~ m/{a-zA-Z0-9}/)      {a-z A-Z}    matching only when same letter in the square bracket     
+{                                    m/a[^a-zA-Z0-9]m/    any character and ending with m, then it matches        
+	print "matching ..\n";       m/a\d/m - try \d digit or 0-9 for numerical digit
+}                                    m/fox  matches fox anywher like in beging or end
+else                                 m/^fox if beginging then matches
+{                                    m/fox$ matches only if at the end
+	print "not matching \n";
+}
+
+
+
+#!/usr/bin/perl
+
+$string = "hello perl scripting";
+
+$string =~ m/perl/ ;
+
+print "match is &$ \n";
+print "prematch is $`;
+print "post match is $';
+
+
+
+#!/usr/bin/perl
+
+$date = "Mon 21:00:40";
+$date =~ m/(\d\d):(\d\d):(\d\d)/;        (\d\d) two digits  
+print "Frist is $1 \n";
+print "second is $2 \n";
+print "third is $3 \n";
+
+
+
+Substitution 
+
+#!/usr/bin/perl
+
+$string = "my 6 tigers jumps 55 feet";
+print "Original is $string \n";
+$string =~ s/tigers/lions/ ;
+print "changed is $string \n";
+
+
+#!/usr/bin/perl
+
+$string = "my 6 tigers jumps 55 feet";
+print "Original is $string \n";
+$string =~ s/\d/_/g ;
+print "changed is $string \n";
+
+
+
+#!/usr/bin/perl
+
+$string = "my 6 tigers jumps 55 feet";
+print "Original is $string \n";
+$string =~ s/\w/your/g ;              try with w+ also 
+print "changed is $string \n";
+
+
+
+#!/usr/bin/perl
+
+$string = "hello";
+$string =~ tr/{a-z]/[A-Z]/;
+print "$string \n";
+
+
+#!/usr/bin/perl
+
+$string = "hello my name is perl";
+$string =~ tr/a/_/ ;
+print "$string \n";
+
+
+
+Important Points: - 
+The only difference is no hyphen in shell, but it is used in perl.
+Note: SPACE IS IMPORTANT IN SHELL
+Note: shell work with or without blocks - { }, but square/flower bracket is must
+Note: we use elif in SHELL & elsif in perl 
+Note: if script start with if, then it shud end with fi
+
+Case Statement: 
+Note - if no double semi colon, then it wont exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interview Questions: -
+In Perl, what is the difference between a .pm (Perl module) and .pl (Perl script) file?
+
+1 A .pl is a single script.
+2 In .pm (Perl Module) you have functions that you can use from other Perl scripts:
+
+A Perl module is a self-contained piece of Perl code that can be used by a Perl program or by other Perl modules. It is conceptually similar to a C link library, or a C++ class.
+
+
+At the very core, the file extension you use makes no difference as to how perl interprets those files.
+
+However, putting modules in .pm files following a certain directory structure that follows the package name provides a convenience. So, if you have a module Example::Plot::FourD and you put it in a directory Example/Plot/FourD.pm in a path in your @INC, then use and require will do the right thing when given the package name as in use Example::Plot::FourD.
+
+
+
+
+
